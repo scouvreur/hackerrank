@@ -12,7 +12,7 @@ def invert_list(numbers):
     ----------
     numbers : list
         a list of numbers
-    
+
     Returns
     -------
     reversed : list
