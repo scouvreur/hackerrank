@@ -18,7 +18,6 @@ for _ in range(n_test_cases):
 			memo[n] = (tmp, len(str(tmp)))
 			return memo[n][0]
 
-	d = 3
 	n = 0
 	while True:
 		fib(n, memo)
