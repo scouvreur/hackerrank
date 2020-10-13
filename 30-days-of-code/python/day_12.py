@@ -3,9 +3,11 @@ class Person:
         self.firstName = firstName
         self.lastName = lastName
         self.idNumber = idNumber
+
     def printPerson(self):
         print("Name:", self.lastName + ",", self.firstName)
         print("ID:", self.idNumber)
+
 
 class Student(Person):
     #   Class Constructor
@@ -32,28 +34,29 @@ class Student(Person):
         cumsum = 0
         for score in self.scores:
             cumsum += score
-        average = cumsum/len(self.scores)
+        average = cumsum / len(self.scores)
 
         if average < 40:
-            grade = 'T'
+            grade = "T"
         elif 40 <= average < 55:
-            grade = 'D'
+            grade = "D"
         elif 55 <= average < 70:
-            grade = 'P'
+            grade = "P"
         elif 70 <= average < 80:
-            grade = 'A'
+            grade = "A"
         elif 80 <= average < 90:
-            grade = 'E'
+            grade = "E"
         else:
-            grade = 'O'
+            grade = "O"
         return grade
+
 
 line = input().split()
 firstName = line[0]
 lastName = line[1]
 idNum = line[2]
-numScores = int(input()) # not needed for Python
-scores = list( map(int, input().split()) )
+numScores = int(input())  # not needed for Python
+scores = list(map(int, input().split()))
 s = Student(firstName, lastName, idNum, scores)
 s.printPerson()
 print("Grade:", s.calculate())

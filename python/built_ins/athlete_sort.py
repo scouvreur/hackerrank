@@ -1,6 +1,6 @@
 #!/bin/python3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     nm = input().split()
     n = int(nm[0])
     m = int(nm[1])
@@ -13,4 +13,4 @@ if __name__ == '__main__':
 arr_sorted = sorted(arr, key=lambda x: x[k])
 
 for row in arr_sorted:
-    print(' '.join(list(map(str, row))))
+    print(" ".join(list(map(str, row))))

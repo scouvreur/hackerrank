@@ -23,7 +23,9 @@ def getTotalGoals(team, year):
     ).json()["total_pages"]
     home_goals = 0
     for i in range(total_pages):
-        response = requests.get(home_endpoint.format(year=year, team=team, page=i + 1))
+        response = requests.get(
+            home_endpoint.format(year=year, team=team, page=i + 1)
+        )
         for line in response.json()["data"]:
             home_goals += int(line["team1goals"])
 
@@ -32,7 +34,9 @@ def getTotalGoals(team, year):
     ).json()["total_pages"]
     away_goals = 0
     for i in range(total_pages):
-        response = requests.get(away_endpoint.format(year=year, team=team, page=i + 1))
+        response = requests.get(
+            away_endpoint.format(year=year, team=team, page=i + 1)
+        )
         for line in response.json()["data"]:
             away_goals += int(line["team2goals"])
 

@@ -12,17 +12,15 @@ import os
 #  2. INTEGER year
 #
 
-comp_endpoint = (
-    "https://jsonmock.hackerrank.com/api/football_competitions?name={name}&year={year}"
-)
+comp_endpoint = "https://jsonmock.hackerrank.com/api/football_competitions?name={name}&year={year}"
 home_endpoint = "https://jsonmock.hackerrank.com/api/football_matches?competition={comp}&year={year}&team1={team}&page={page}"
 away_endpoint = "https://jsonmock.hackerrank.com/api/football_matches?competition={comp}&year={year}&team2={team}&page={page}"
 
 
 def getCompWinner(comp, year):
-    winner = requests.get(comp_endpoint.format(name=comp, year=year)).json()["data"][0][
-        "winner"
-    ]
+    winner = requests.get(comp_endpoint.format(name=comp, year=year)).json()[
+        "data"
+    ][0]["winner"]
     return winner
 
 
@@ -62,7 +60,10 @@ def getWinnerTotalGoals(comp, year):
 def test_getCompWinner():
     """Test for the getCompWinner function."""
     assert getCompWinner(comp="UEFA Champions League", year=2011) == "Chelsea"
-    assert getCompWinner(comp="UEFA Champions League", year=2012) == "Bayern Munich"
+    assert (
+        getCompWinner(comp="UEFA Champions League", year=2012)
+        == "Bayern Munich"
+    )
     assert getCompWinner(comp="La Liga", year=2011) == "Real Madrid"
 
 
@@ -70,7 +71,10 @@ def test_getTotalGoals():
     """Test for the getTotalGoals function."""
     assert getTotalGoals(comp="La Liga", year=2011, team="Real Madrid") == 121
     assert (
-        getTotalGoals(comp="UEFA Champions League", year=2012, team="Real Madrid") == 26
+        getTotalGoals(
+            comp="UEFA Champions League", year=2012, team="Real Madrid"
+        )
+        == 26
     )
 
 

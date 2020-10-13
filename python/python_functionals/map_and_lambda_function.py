@@ -1,4 +1,5 @@
-cube = lambda x: x**3 # complete the lambda function
+cube = lambda x: x ** 3  # complete the lambda function
+
 
 def fibonacci(n):
     """
@@ -17,8 +18,9 @@ def fibonacci(n):
     memo = [0, 1]
 
     for i in range(2, n):
-        memo += [memo[i-2] + memo[i-1]]
+        memo += [memo[i - 2] + memo[i - 1]]
 
     return memo[:n]
+
 
 print(fibonacci(5))

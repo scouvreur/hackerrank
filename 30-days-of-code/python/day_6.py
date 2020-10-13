@@ -3,17 +3,19 @@ def even_char_string(string):
     # Function takes in a string and returns its even chars
     even_chars = ""
     for i in range(0, len(string)):
-        if i%2 == 0:
+        if i % 2 == 0:
             even_chars = even_chars + string[i]
     return even_chars
+
 
 def odd_char_string(string):
     # Function takes in a string and returns its even chars
     odd_chars = ""
     for i in range(0, len(string)):
-        if i%2 == 1:
+        if i % 2 == 1:
             odd_chars = odd_chars + string[i]
     return odd_chars
+
 
 num_test_cases = int(input())
 strings = []

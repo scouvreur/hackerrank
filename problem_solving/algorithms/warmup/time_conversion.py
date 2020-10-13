@@ -3,10 +3,10 @@
 
 def time_conversion(s):
     if "AM" in s:
-        hour = str(int(s[:2])%12).zfill(2)
+        hour = str(int(s[:2]) % 12).zfill(2)
         return (hour + s[2:]).replace("AM", "")
     elif "PM" in s:
-        hour = str(int(s[:2])+12).zfill(2)
+        hour = str(int(s[:2]) + 12).zfill(2)
         if hour == "24":
             hour = "12"
         return (hour + s[2:]).replace("PM", "")

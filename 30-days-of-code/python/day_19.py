@@ -9,7 +9,7 @@ class AdvancedArithmetic(object):
 class Calculator(AdvancedArithmetic):
     def divisorSum(self, n):
         divisors = []
-        for d in range(1,n+1):
+        for d in range(1, n + 1):
             if n % d == 0:
                 divisors.append(d)
         return reduce(lambda x, y: x + y, divisors)

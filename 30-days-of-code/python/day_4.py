@@ -1,5 +1,5 @@
 class Person(object):
-    def __init__(self,initialAge):
+    def __init__(self, initialAge):
         self.age = initialAge
         # Add some more code to run some checks on initialAge
         if self.age < 0:
@@ -18,6 +18,7 @@ class Person(object):
     def yearPasses(self):
         # Increment the age of the person in here
         self.age = self.age + 1
+
 
 t = int(input())
 for i in range(0, t):

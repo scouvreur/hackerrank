@@ -17,5 +17,6 @@ def compareTriplets(a: List[int], b: List[int]) -> List[int]:
             score_b += 1
     return [score_a, score_b]
 
+
 result = compareTriplets(a, b)
-print(' '.join(map(str, result)))
+print(" ".join(map(str, result)))

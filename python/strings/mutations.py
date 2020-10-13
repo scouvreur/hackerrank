@@ -8,7 +8,8 @@ def mutate_string(string, position, character):
         edit_string += char
     return edit_string
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     s = input()
     i, c = input().split()
     s_new = mutate_string(s, int(i), c)

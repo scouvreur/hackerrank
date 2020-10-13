@@ -6,7 +6,8 @@ array = []
 for _ in range(6):
     array.append(list(map(int, input().rstrip().split())))
 
-class Hourglass():
+
+class Hourglass:
     def __init__(self, items):
         self.items = items
 
@@ -23,9 +24,9 @@ def get_hourglasses(array):
         for j in range(len(array)):
             hourglass = []
             try:
-                hourglass.append(array[i][0+j:3+j])
-                hourglass.append([array[i+1][1+j]])
-                hourglass.append(array[i+2][0+j:3+j])
+                hourglass.append(array[i][0 + j : 3 + j])
+                hourglass.append([array[i + 1][1 + j]])
+                hourglass.append(array[i + 2][0 + j : 3 + j])
                 hourglass = reduce(list.__add__, hourglass)
                 if len(hourglass) == 7:
                     hourglasses.append(Hourglass(hourglass))
@@ -34,6 +35,7 @@ def get_hourglasses(array):
             except IndexError:
                 pass
     return hourglasses
+
 
 hourglasses = get_hourglasses(array=array)
 

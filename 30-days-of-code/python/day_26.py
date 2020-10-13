@@ -10,9 +10,9 @@ if return_date[year] > due_date[year]:
 elif return_date[year] < due_date[year]:
     fine = 0
 elif return_date[month] > due_date[month]:
-    fine = 500*(return_date[month] - due_date[month])
+    fine = 500 * (return_date[month] - due_date[month])
 elif return_date[day] > due_date[day]:
-    fine = 15*(return_date[day] - due_date[day])
+    fine = 15 * (return_date[day] - due_date[day])
 else:
     fine = 0
 

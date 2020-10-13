@@ -1,5 +1,6 @@
 from statistics import median
 
+
 def quartile(list_ints, n):
     """
     Function calculating the quartile of
@@ -18,12 +19,12 @@ def quartile(list_ints, n):
         raise ValueError(msg)
 
     list_ints.sort()
-    lower_half = list_ints[:int(len(list_ints)/2)]
+    lower_half = list_ints[: int(len(list_ints) / 2)]
 
-    if len(list_ints)%2 == 1:
-        upper_half = list_ints[int(len(list_ints)/2+1):]
+    if len(list_ints) % 2 == 1:
+        upper_half = list_ints[int(len(list_ints) / 2 + 1) :]
     else:
-        upper_half = list_ints[int(len(list_ints)/2):]
+        upper_half = list_ints[int(len(list_ints) / 2) :]
 
     if n == 2:
         q_n = median(list_ints)
@@ -33,13 +34,14 @@ def quartile(list_ints, n):
         q_n = median(upper_half)
     return q_n
 
+
 len_nums = int(input())
 nums = list(map(lambda x: int(x), input().rstrip().split()))
 freqs = list(map(lambda x: int(x), input().rstrip().split()))
 
 list_ints = []
 for i in range(len_nums):
-    list_ints += freqs[i]*[nums[i]]
+    list_ints += freqs[i] * [nums[i]]
 
 iqr = float(quartile(list_ints, 3) - quartile(list_ints, 1))
 print(iqr)

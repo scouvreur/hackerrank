@@ -11,7 +11,7 @@ def is_perfect(substring, k):
     for i in range(10):
         counts[i] = substring.count(str(i))
     # remove counts with value 0
-    counts = {key:val for key, val in counts.items() if val != 0}
+    counts = {key: val for key, val in counts.items() if val != 0}
     perfect = all(value == k for value in counts.values())
     return perfect
 
@@ -38,10 +38,10 @@ def get_all_mod_k_substrings(s, k):
     """
     substrings = []
     i = 1
-    while i*k <= len(s):
+    while i * k <= len(s):
         for j in range(len(s)):
-            substring = s[j:j+k*i]
-            if len(substring) == k*i:
+            substring = s[j : j + k * i]
+            if len(substring) == k * i:
                 substrings.append(substring)
         i += 1
     return substrings
@@ -49,24 +49,27 @@ def get_all_mod_k_substrings(s, k):
 
 def test_get_all_mod_k_substrings():
     # Test for get_all_mod_k_substrings function
-    ground_truth = ['10',
-        '02',
-        '20',
-        '01',
-        '12',
-        '22',
-        '1020',
-        '0201',
-        '2012',
-        '0122',
-        '102012',
-        '020122'
+    ground_truth = [
+        "10",
+        "02",
+        "20",
+        "01",
+        "12",
+        "22",
+        "1020",
+        "0201",
+        "2012",
+        "0122",
+        "102012",
+        "020122",
     ]
     assert ground_truth == get_all_mod_k_substrings(s="1020122", k=2)
+
 
 # Run tests
 test_is_perfect()
 test_get_all_mod_k_substrings()
+
 
 def perfectSubstring(s, k):
     # Write your code here
@@ -76,6 +79,7 @@ def perfectSubstring(s, k):
         if is_perfect(substring=string, k=k):
             perfect_substrings += 1
     return perfect_substrings
+
 
 # test cases
 s = "1102021222"

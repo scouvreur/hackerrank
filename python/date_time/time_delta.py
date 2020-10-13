@@ -1,10 +1,11 @@
 from datetime import datetime
 
+
 def time_delta(t1, t2):
     """
     Takes two datetime strings in the
     following format :
-    	Sun 10 May 2015 13:54:36 -0700
+        Sun 10 May 2015 13:54:36 -0700
     and returns the time difference in
     seconds between them.
 
@@ -28,10 +29,19 @@ def time_delta(t1, t2):
 
 
 def test_time_delta():
-	# Tests function with two sample cases
-	assert time_delta("Sun 10 May 2015 13:54:36 -0700",
-				      "Sun 10 May 2015 13:54:36 -0000") == 25200
-	assert time_delta("Sat 02 May 2015 19:54:36 +0530",
-				      "Fri 01 May 2015 13:54:36 -0000") == 88200
+    # Tests function with two sample cases
+    assert (
+        time_delta(
+            "Sun 10 May 2015 13:54:36 -0700", "Sun 10 May 2015 13:54:36 -0000"
+        )
+        == 25200
+    )
+    assert (
+        time_delta(
+            "Sat 02 May 2015 19:54:36 +0530", "Fri 01 May 2015 13:54:36 -0000"
+        )
+        == 88200
+    )
+
 
 test_time_delta()

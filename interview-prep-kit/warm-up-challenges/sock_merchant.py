@@ -13,13 +13,14 @@ def sockMerchant(n, array):
 
     n_pairs = 0
     for key in counts.keys():
-        n_pairs += counts[key]//2
+        n_pairs += counts[key] // 2
     return n_pairs
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
     n = int(input())
     ar = list(map(int, input().rstrip().split()))
     result = sockMerchant(n, ar)
-    fptr.write(str(result) + '\n')
+    fptr.write(str(result) + "\n")
     fptr.close()

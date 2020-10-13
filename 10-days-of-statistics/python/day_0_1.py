@@ -3,6 +3,7 @@
 len_numbers = int(input())
 numbers = list(map(lambda x: int(x), input().split()))
 
+
 def mean(numbers):
     """
     Parameters
@@ -18,9 +19,10 @@ def mean(numbers):
     cumsum = 0
     for number in numbers:
         cumsum += number
-    mean = cumsum/len(numbers)
+    mean = cumsum / len(numbers)
     mean = round(mean, 1)
     return mean
+
 
 def median(numbers):
     """
@@ -35,13 +37,16 @@ def median(numbers):
         the median of the list of numbers passed
     """
     numbers.sort()
-    if len(numbers)%2 == 1:
-        median = numbers[-round(-len(numbers)/2)]
+    if len(numbers) % 2 == 1:
+        median = numbers[-round(-len(numbers) / 2)]
         median = round(median, 1)
     else:
-        median = (numbers[int(len(numbers)/2)] + numbers[int(len(numbers)/2 -1)])/2
+        median = (
+            numbers[int(len(numbers) / 2)] + numbers[int(len(numbers) / 2 - 1)]
+        ) / 2
         median = round(median, 1)
     return median
+
 
 def mode(numbers):
     """

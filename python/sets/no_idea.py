@@ -6,9 +6,9 @@ B = set([5, 7])
 
 happiness = 0
 for item in array:
-	if item in A:
-		happiness += 1
-	if item in B:
-		happiness -= 1
+    if item in A:
+        happiness += 1
+    if item in B:
+        happiness -= 1
 
 print(happiness)

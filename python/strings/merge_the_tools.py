@@ -19,7 +19,7 @@ def merge_the_tools(string, k):
     """
     subsets = []
     for i in range(k):
-        subsets.append(string[int(i*k):int((i+1)*k)])
+        subsets.append(string[int(i * k) : int((i + 1) * k)])
 
     for subset in subsets:
         temp = list(dict.fromkeys(list(subset)))

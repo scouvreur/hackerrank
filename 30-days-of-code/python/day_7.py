@@ -6,6 +6,7 @@ import random
 import re
 import sys
 
+
 def invert_list(numbers):
     """
     Parameters
@@ -23,7 +24,8 @@ def invert_list(numbers):
         reversed.append(numbers.pop())
     return reversed
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     n = int(input())
 
     array = list(map(lambda x: int(x), input().split()))

@@ -20,10 +20,10 @@ def wrap(string, max_width):
     """
     result = ""
     for i in range(len(string)):
-    	try:
-    		result += string[i*max_width:(i+1)*max_width] + "\n"
-    	except IndexError:
-    		result += string[i*max_width:]
+        try:
+            result += string[i * max_width : (i + 1) * max_width] + "\n"
+        except IndexError:
+            result += string[i * max_width :]
     return result
 
 
