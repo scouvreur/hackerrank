@@ -2,7 +2,7 @@
 
 
 def n_root(X: int, N: int) -> float:
-    return X**(1/N)
+    return X ** (1 / N)
 
 
 # Complete the power_sum function below.
@@ -20,7 +20,6 @@ def power_sum(X: int, N: int) -> int:
     print("possible_combinations =", possible_combinations)
     print("subcombinations =", subcombinations)
     return len(possible_combinations)
-
 
 
 def test_power_sum():

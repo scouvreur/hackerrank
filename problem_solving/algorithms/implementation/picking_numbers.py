@@ -45,7 +45,7 @@ array = [1, 2, 2, 3, 1, 2]
 result = []
 for i, _ in enumerate(array):
     try:
-        if array[i] - array[i+1] <= 1:
+        if array[i] - array[i + 1] <= 1:
             result.append(array[i])
         else:
             break
