@@ -23,9 +23,9 @@ jobs:
           conda-channels: anaconda, conda-forge
       - name: Install dependencies
         run: |
-          conda install flake8 black
-          flake8 --version
-          black --version
+          conda install flake8=3.8.4 black=19.10b0
+          echo "flake8 version =" $(flake8 --version)
+          echo "black version =" $(black --version)
       # - name: Flake8 formatting
       #   run: |
       #     # stop the build if there are Python syntax errors or undefined names
