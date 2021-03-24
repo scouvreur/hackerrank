@@ -20,7 +20,7 @@ def get_subarrays(array: List[int]) -> List[List[int]]:
     try:
         reference = list(map(int, array))
         assert reference == array
-    except:
+    except ValueError:
         raise ValueError("Input array must contain integers.")
     return None
 

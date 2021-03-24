@@ -12,9 +12,18 @@ import os
 #  2. INTEGER year
 #
 
-comp_endpoint = "https://jsonmock.hackerrank.com/api/football_competitions?name={name}&year={year}"
-home_endpoint = "https://jsonmock.hackerrank.com/api/football_matches?competition={comp}&year={year}&team1={team}&page={page}"
-away_endpoint = "https://jsonmock.hackerrank.com/api/football_matches?competition={comp}&year={year}&team2={team}&page={page}"
+comp_endpoint = (
+    "https://jsonmock.hackerrank.com/api/football_competitions?"
+    "name={name}&year={year}"
+)
+home_endpoint = (
+    "https://jsonmock.hackerrank.com/api/football_matches?"
+    "competition={comp}&year={year}&team1={team}&page={page}"
+)
+away_endpoint = (
+    "https://jsonmock.hackerrank.com/api/football_matches?"
+    "competition={comp}&year={year}&team2={team}&page={page}"
+)
 
 
 def getCompWinner(comp, year):

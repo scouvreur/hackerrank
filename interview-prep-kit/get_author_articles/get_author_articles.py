@@ -46,7 +46,10 @@ def test_getArticleTitles():
     """Test for getArticleTitles function."""
     assert getArticleTitles(author="epaga") == [
         "A Message to Our Customers",
-        "“Was isolated from 1999 to 2006 with a 486. Built my own late 80s OS”",
+        (
+            "“Was isolated from 1999 to 2006 with a 486. "
+            "Built my own late 80s OS”"
+        ),
         "Apple’s declining software quality",
     ]
     assert getArticleTitles(author="saintamh") == [

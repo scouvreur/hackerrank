@@ -4,6 +4,7 @@
 n = 1
 a = [4, 3, 2, 1]
 
+
 # Helper function
 def swap(array, k):
     """

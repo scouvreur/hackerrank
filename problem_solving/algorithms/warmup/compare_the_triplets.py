@@ -5,6 +5,7 @@ from typing import List
 a = list(map(int, input().rstrip().split()))
 b = list(map(int, input().rstrip().split()))
 
+
 # Complete the compareTriplets function below.
 def compareTriplets(a: List[int], b: List[int]) -> List[int]:
     score_a, score_b = 0, 0

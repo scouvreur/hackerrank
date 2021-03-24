@@ -3,6 +3,7 @@ name = name.title()
 
 name = "1 w 2 r 3g"
 
+
 # Complete the solve function below.
 def solve(string):
     """

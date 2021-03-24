@@ -12,8 +12,14 @@ import os
 #  2. INTEGER year
 #
 
-home_endpoint = "https://jsonmock.hackerrank.com/api/football_matches?year={year}&team1={team}&page={page}"
-away_endpoint = "https://jsonmock.hackerrank.com/api/football_matches?year={year}&team2={team}&page={page}"
+home_endpoint = (
+    "https://jsonmock.hackerrank.com/api/football_matches?"
+    "year={year}&team1={team}&page={page}"
+)
+away_endpoint = (
+    "https://jsonmock.hackerrank.com/api/football_matches?"
+    "year={year}&team2={team}&page={page}"
+)
 
 
 def getTotalGoals(team, year):

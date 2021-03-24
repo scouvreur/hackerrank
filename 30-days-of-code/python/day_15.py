@@ -12,9 +12,9 @@ class Solution:
             current = current.next
 
     def insert(self, head, data):
-        if head == None:
+        if head is None:
             head = Node(data)
-        elif head.next == None:
+        elif head.next is None:
             head.next = Node(data)
         else:
             self.insert(head.next, data)

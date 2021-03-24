@@ -2,6 +2,7 @@
 
 import os
 
+
 # Complete the sockMerchant function below.
 def sockMerchant(n, array):
     counts = {}
