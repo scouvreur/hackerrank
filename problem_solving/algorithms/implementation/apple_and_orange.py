@@ -2,6 +2,7 @@
 
 from typing import List
 
+
 # Complete the count_apples_and_oranges function below.
 def count_apples_and_oranges(
     s: int, t: int, a: int, b: int, apples: List[int], oranges: List[int]

@@ -1,6 +1,3 @@
-cube = lambda x: x ** 3  # complete the lambda function
-
-
 def fibonacci(n):
     """
     Returns a list of fibonacci numbers of length n

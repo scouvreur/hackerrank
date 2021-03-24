@@ -18,7 +18,6 @@ def convert_base2(n):
     n_base2 = ""
     temp = n
     while temp != 0:
-        x = temp // 2
         y = temp % 2
         temp = temp // 2
         n_base2 += str(y)

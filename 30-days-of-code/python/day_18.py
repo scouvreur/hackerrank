@@ -35,9 +35,8 @@ s = "yes"  # shoudl return No
 # Create the Solution class object
 obj = Solution()
 
-l = len(s)
 # push/enqueue all the characters of string s to stack
-for i in range(l):
+for i in range(len(s)):
     obj.pushCharacter(s[i])
     obj.enqueueCharacter(s[i])
 
@@ -47,7 +46,7 @@ pop the top character from stack
 dequeue the first character from queue
 compare both the characters
 """
-for i in range(l // 2):
+for i in range(len(s) // 2):
     if obj.popCharacter() != obj.dequeueCharacter():
         isPalindrome = False
         break
