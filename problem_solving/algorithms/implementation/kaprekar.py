@@ -6,11 +6,11 @@ def is_kaprekar(number):
     for digit in str(squared):
         digit_sum += int(digit)
 
-    left_digits = str(squared)[0:len(str(squared)) - digits]
-    left =  int(left_digits) if left_digits != "" else 0
+    left_digits = str(squared)[0 : len(str(squared)) - digits]
+    left = int(left_digits) if left_digits != "" else 0
 
-    right_digits = str(squared)[- digits:]
-    right = int(right_digits) if right_digits != ""  else 0
+    right_digits = str(squared)[-digits:]
+    right = int(right_digits) if right_digits != "" else 0
 
     if digit_sum == number:
         return True
@@ -19,10 +19,11 @@ def is_kaprekar(number):
     else:
         return False
 
+
 def kaprekar_numbers(lower_bound, upper_bound):
     # Write your code here
     result = []
-    for number in range(lower_bound, upper_bound+1):
+    for number in range(lower_bound, upper_bound + 1):
         if is_kaprekar(number):
             result.append(number)
 

@@ -14,11 +14,13 @@ def hourglass_sum(array):
 
 
 def test_hourglass_sum():
-    assert hourglas_sum(array=test_1) == 5
-    assert hourglas_sum(array=test_2) == 19
-    assert hourglas_sum(array=test_3) == 15
+    assert hourglass_sum(array=test_1) == 5
+    assert hourglass_sum(array=test_2) == 19
+    assert hourglass_sum(array=test_3) == 15
 
-def get_hourglasses(array)
+
+def get_hourglasses(array):
+    return None
 
 
 if __name__ == "__main__":

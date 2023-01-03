@@ -24,12 +24,7 @@ cavities = []
 for i in range(len(grid)):
     for j in range(len(grid)):
         # exclude grid edges
-        if (
-            i > 0
-            and i != len(grid) - 1
-            and j > 0
-            and j != len(grid) - 1
-        ):
+        if i > 0 and i != len(grid) - 1 and j > 0 and j != len(grid) - 1:
             # print(i, j, grid[i][j])
             if is_cavity(i, j, grid):
                 cavities.append((i, j))
