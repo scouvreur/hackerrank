@@ -3,6 +3,7 @@ class SinglyLinkedListNode:
         self.data = node_data
         self.next = None
 
+
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
@@ -16,8 +17,8 @@ class SinglyLinkedList:
         else:
             self.tail.next = node
 
-
         self.tail = node
+
 
 def print_singly_linked_list(node, sep, fptr):
     while node:
@@ -27,5 +28,3 @@ def print_singly_linked_list(node, sep, fptr):
 
         if node:
             fptr.write(sep)
-
-

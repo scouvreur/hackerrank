@@ -26,7 +26,7 @@ def test_palindrome_index():
     assert palindrome_index("aaab") == 3
     assert palindrome_index("baa") == 0
     assert palindrome_index("aaa") == -1
-    assert palindrome_index("quyjjdcgsvvsgcdjjyq") == 1 # 8 is also a solution
+    assert palindrome_index("quyjjdcgsvvsgcdjjyq") == 1  # 8 is also a solution
     assert palindrome_index("lhrxvssvxrhl") == -1
 
 
