@@ -13,7 +13,7 @@ class Calculator:
             if n < 0 or p < 0:
                 raise NegativeValueError
             else:
-                return n ** p
+                return n**p
         except NegativeValueError:
             return "n and p should be non-negative"
 

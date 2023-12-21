@@ -1,6 +1,6 @@
 def is_kaprekar(number):
     digits = len(str(number))
-    squared = number ** 2
+    squared = number**2
 
     digit_sum = 0
     for digit in str(squared):

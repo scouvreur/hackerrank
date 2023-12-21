@@ -34,5 +34,5 @@ q = 1 - p
 n = 10
 x = 5
 
-b = permutations(n, x) * p ** x * q ** (n - x)
+b = permutations(n, x) * p**x * q ** (n - x)
 print(b)

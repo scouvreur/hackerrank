@@ -7,8 +7,7 @@ from typing import List
 def count_apples_and_oranges(
     s: int, t: int, a: int, b: int, apples: List[int], oranges: List[int]
 ) -> (int, int):
-    """
-    """
+    """ """
     apple_count = 0
     orange_count = 0
     apples_thrown = list(map(lambda x: x + a, apples))

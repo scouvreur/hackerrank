@@ -11,11 +11,11 @@ for _ in range(n_test_cases):
 
     def fib(n, memo):
         n = int(n)
-        phi = (1 + 5 ** 0.5) / 2
+        phi = (1 + 5**0.5) / 2
         if n in memo:
             return memo[n][0]
         else:
-            tmp = int(round((phi ** n) / (5 ** 0.5)))
+            tmp = int(round((phi**n) / (5**0.5)))
             memo[n] = (tmp, len(str(tmp)))
             return memo[n][0]
 

@@ -7,9 +7,7 @@
 # The function accepts 2D_INTEGER_ARRAY arr as parameter.
 #
 def hourglass_sum(array):
-    """
-
-    """
+    """ """
     return None
 
 
