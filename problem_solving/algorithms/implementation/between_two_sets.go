@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func getTotalX(a []int32, b []int32) int32 {
 	// Assuming that a and b are ordered
 	aMax := a[len(a)-1]
@@ -32,8 +28,4 @@ func getTotalX(a []int32, b []int32) int32 {
 	}
 
 	return int32(len(set))
-}
-
-func main() {
-	fmt.Println("hello")
 }
