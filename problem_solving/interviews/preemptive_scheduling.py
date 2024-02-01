@@ -1,10 +1,6 @@
 #!/bin/python3
 
-import math
 import os
-import random
-import re
-import sys
 
 
 #
@@ -15,6 +11,7 @@ import sys
 #  1. INTEGER n
 #  2. STRING_ARRAY logs
 #
+
 
 def getTotalExecutionTime(n, logs):
     # Write your code here
@@ -46,7 +43,9 @@ def getTotalExecutionTime(n, logs):
                 preempted_functions.append(currently_running)
 
                 # add runtime to runtimes
-                runtimes[currently_running] += current_timestamp - previous_timestamp
+                runtimes[currently_running] += (
+                    current_timestamp - previous_timestamp
+                )
 
             # update currently running function
             currently_running = function_id
@@ -55,7 +54,9 @@ def getTotalExecutionTime(n, logs):
 
         if action == "end" and currently_running == function_id:
             # calculate runtime
-            runtimes[currently_running] += current_timestamp + 1 - previous_timestamp
+            runtimes[currently_running] += (
+                current_timestamp + 1 - previous_timestamp
+            )
 
             # is it last function to run ?
             if len(preempted_functions) != 0:
@@ -71,8 +72,8 @@ def getTotalExecutionTime(n, logs):
     return runtimes
 
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     n = int(input().strip())
 
@@ -86,7 +87,7 @@ if __name__ == '__main__':
 
     result = getTotalExecutionTime(n, logs)
 
-    fptr.write('\n'.join(map(str, result)))
-    fptr.write('\n')
+    fptr.write("\n".join(map(str, result)))
+    fptr.write("\n")
 
     fptr.close()

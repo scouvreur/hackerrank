@@ -1,9 +1,8 @@
-
 def is_leap_year(calendar: str, year: int) -> bool:
     if calendar == "julian":
-        return year%4 == 0
+        return year % 4 == 0
     elif calendar == "gregorian":
-        return (year%400 == 0) or ((year%4 == 0) and (year%100 != 0))
+        return (year % 400 == 0) or ((year % 4 == 0) and (year % 100 != 0))
 
 
 def day_of_programmer(year: str) -> str:
@@ -23,6 +22,7 @@ def day_of_programmer(year: str) -> str:
     else:
         return "13.09.{}".format(year)
 
+
 def test_is_leap_year():
     """Test for the is_leap_year function."""
     assert is_leap_year("julian", 1800) is True
@@ -35,6 +35,7 @@ def test_day_of_programmer():
     assert day_of_programmer("1800") == "12.09.1800"
     assert day_of_programmer("2015") == "13.09.2015"
     assert day_of_programmer("1918") == "26.09.1918"
+
 
 test_is_leap_year()
 # test_day_of_programmer()
