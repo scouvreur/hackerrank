@@ -20,6 +20,7 @@ It should handle inputs like:
 "1d1h"
 """
 
+
 def parse_timestamp(s: str) -> int:
     # initialize values
     days = 0
@@ -31,29 +32,32 @@ def parse_timestamp(s: str) -> int:
     if "d" in s:
         days_str = s.split("d")[0]
         days = int(days_str)
-        s = s[len(days_str)+1:]
+        s = s[len(days_str) + 1 :]
 
     # check for hour component
     if "h" in s:
         hours_str = s.split("h")[0]
         hours = int(hours_str)
-        s = s[len(hours_str)+1:]
+        s = s[len(hours_str) + 1 :]
 
     # check for minute component
     if "m" in s:
         minutes_str = s.split("m")[0]
         minutes = int(minutes_str)
-        s = s[len(minutes_str)+1:]
+        s = s[len(minutes_str) + 1 :]
 
     # check for second component
     if "s" in s:
         seconds_str = s.split("s")[0]
         seconds = int(seconds_str)
-        s = s[len(seconds_str)+1:]
+        s = s[len(seconds_str) + 1 :]
 
-    total_seconds = 24*60*60*days + 60*60*hours + 60*minutes + seconds
+    total_seconds = (
+        24 * 60 * 60 * days + 60 * 60 * hours + 60 * minutes + seconds
+    )
 
     return total_seconds
+
 
 def test_parse_timestamp():
     """Test for parse_timestamp function."""
