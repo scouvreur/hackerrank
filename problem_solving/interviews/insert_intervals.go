@@ -1,33 +1,41 @@
 // Problem statement
 // We want to insert and merge if needed an interval
-// into existing intervals
+// into a set of existing intervals
 
-// Case 0
 // Initial intervals
 // <4,7><10,15><20,21>
 
-// Partial overlap case
-// To insert
-// <5,8>
-
-// Should return
-// <4,8><10,15><20,21>
-
-// Case 1
-// Multiple overlap case
-// To insert
-// <13,30>
-
-// Should return
-// <4,7><10,30>
-
-// Case 2
+// Case 0
 // No overlap
 // To insert
 // <16,17>
 
 // Should return
 // <4,7><10,15><16,17><20,21>
+
+// Case 1
+// Partial overlap case - 1 interval
+// To insert
+// <5,8>
+
+// Should return
+// <4,8><10,15><20,21>
+
+// Case 2
+// Partial overlap case - 2+ intervals
+// To insert
+// <5,14>
+
+// Should return
+// <4,15><20,21>
+
+// Case 3
+// Multiple overlap case - to the end
+// To insert
+// <13,30>
+
+// Should return
+// <4,7><10,30>
 
 package main
 
@@ -68,14 +76,8 @@ func MergeIntoIntervals(initialIntervals [][]int, toInsert []int) [][]int {
 			start.Locked = true
 		}
 
-		if upperBound > toInsert[1] && !end.Locked {
-			end.Index = index
-			end.Locked = true
-		}
-
 		// peek at the next interval
-		if index+1 < len(initialIntervals)-1 {
-
+		if index+1 <= len(initialIntervals)-1 {
 			if initialIntervals[index+1][0] > toInsert[1] && !end.Locked {
 				end.Index = index
 				end.Locked = true
@@ -87,17 +89,21 @@ func MergeIntoIntervals(initialIntervals [][]int, toInsert []int) [][]int {
 			}
 		}
 
-		// DEBUG MODE
-		if debug {
-			fmt.Println("index:", index, "interval:", interval)
-			fmt.Printf("start: %+v\n", start)
-			fmt.Printf("end: %+v\n", end)
-			fmt.Println("isInsert:", isInsert)
+		if upperBound > toInsert[1] && !end.Locked {
+			end.Index = index
+			end.Locked = true
 		}
 	}
 
-	if start.Index == end.Index && start.Locked && end.Locked {
-		// if isInsert {
+	// DEBUG MODE
+	if debug {
+		fmt.Printf("start: %+v\n", start)
+		fmt.Printf("end: %+v\n", end)
+		fmt.Println("isInsert:", isInsert)
+	}
+
+	// if start.Index == end.Index && start.Locked && end.Locked {
+	if isInsert {
 		// Simple insert
 		newIntervals := make([][]int, len(initialIntervals)+1)
 
@@ -115,8 +121,7 @@ func MergeIntoIntervals(initialIntervals [][]int, toInsert []int) [][]int {
 
 	} else {
 		// some merge scenario
-		// } else if start.Index == end.Index-1 && !end.Locked {
-		if !end.Locked {
+		if end.Index == 0 && !end.Locked {
 			// Merge scenario - to the end
 			// case when we need to merge all the way to the end
 			newIntervals := make([][]int, len(initialIntervals[:start.Index])+1)
@@ -132,20 +137,15 @@ func MergeIntoIntervals(initialIntervals [][]int, toInsert []int) [][]int {
 			}
 
 			return newIntervals
-		} else if start.Index == end.Index-1 {
+		} else if start.Index == end.Index && end.Locked {
 			// Merge scenario - 1 interval
 			initialIntervals[start.Index][0] = min(initialIntervals[start.Index][0], toInsert[0])
 			initialIntervals[start.Index][1] = max(initialIntervals[start.Index][1], toInsert[1])
 
 			return initialIntervals
-		} else {
+		} else if end.Index > start.Index && end.Locked {
 			// Merge scenario - 2+ intervals
 			newIntervals := make([][]int, len(initialIntervals)-(end.Index-start.Index))
-
-			// DEBUG MODE
-			if debug {
-				fmt.Println(newIntervals)
-			}
 
 			for index := range newIntervals {
 				if index < start.Index {
@@ -153,13 +153,14 @@ func MergeIntoIntervals(initialIntervals [][]int, toInsert []int) [][]int {
 				} else if index == start.Index {
 					newIntervals[index] = []int{0, 0}
 					newIntervals[index][0] = min(initialIntervals[index][0], toInsert[0])
-					// newIntervals[index][1] = max(initialIntervals[index+1][1], toInsert[1])
+					newIntervals[index][1] = max(initialIntervals[end.Index][1], toInsert[1])
 				} else {
-					// newIntervals[index] = initialIntervals[index+1]
+					newIntervals[index] = initialIntervals[index+end.Index-start.Index]
 				}
 			}
-
 			return newIntervals
+		} else {
+			return [][]int{{}}
 		}
 	}
 }
